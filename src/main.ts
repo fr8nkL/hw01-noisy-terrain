@@ -1,5 +1,6 @@
 import {vec2, vec3} from 'gl-matrix';
-import * as Stats from 'stats-js';
+//import * as Stats from 'stats-js';
+var Stats = require('stats-js');
 import * as DAT from 'dat-gui';
 import Square from './geometry/Square';
 import Plane from './geometry/Plane';
@@ -103,8 +104,8 @@ function main() {
   gl.enable(gl.DEPTH_TEST);
 
   const lambert = new ShaderProgram([
-    new Shader(gl.VERTEX_SHADER, require('./shaders/terrain-vert.glsl')),
-    new Shader(gl.FRAGMENT_SHADER, require('./shaders/terrain-frag.glsl')),
+    new Shader(gl.VERTEX_SHADER, require('./shaders/adam-terrain-vert.glsl')),
+    new Shader(gl.FRAGMENT_SHADER, require('./shaders/adam-terrain-frag.glsl')),
   ]);
 
   const flat = new ShaderProgram([
